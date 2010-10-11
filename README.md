@@ -18,7 +18,7 @@ I had an old [BASIC Stamp](http://en.wikipedia.org/wiki/BASIC_Stamp) microcontro
 
 ### The BASIC Stamp Editor and Wine under Linux
 
-Getting the BASIC Stamp Editor working under Linux was paramount to making this project possible (mainly because I was too lazy and stubborn to install Windows). Success was finally made after reading [this post](http://ubuntuforums.org/showthread.php?t=1523814). I followed it almost exactly, except there was no need to follow the "VERY IMPORTANT STEP", I'm guessing because the bug he was referring to doesn't exist in the newer version of Wine I'm using. Speaking of which, I am using the following versions:
+Getting the BASIC Stamp Editor working under Linux was paramount to making this project possible (mainly because I was too lazy and stubborn to install Windows). Success was finally made after reading [this post](http://ubuntuforums.org/showthread.php?t=1523814). I followed it almost exactly, except there was ironically no need to follow the *"VERY IMPORTANT STEP"* section. I'm guessing this was because the bug he was referring to doesn't exist in the newer version of Wine I'm using. Speaking of which, here are the versions of software I'm using:
 
  - Wine v1.1.42
  - BASIC Stamp Editor v2.2

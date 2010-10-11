@@ -2,9 +2,7 @@
 
 KeypadIgnition is an electronics project that will allow me to start my car, Sylvia, by entering a passcode, as oppose to starting her the boring, "traditional" with a key. (In other words, it'll make me feel like a secret agent whenever I hop in my car, punch in a keycode, and have it roar to life. How bad ass would that be? ;-)
 
-## Project status
-
-** Work in-progress **
+** Project status: *work in-progress* **
 
 ## Background
 

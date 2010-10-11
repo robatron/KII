@@ -19,7 +19,7 @@ Getting the BASIC Stamp Editor working under Linux was paramount to making this 
  - ** Wine v1.1.42 **
  - ** BASIC Stamp Editor v2.2 **
 
- ### About my car ###
+### About my car ###
 
- She's a 2001 Subaru Impreza L Sports Wagon (kind of an oxymoron, eh? ;-)
+She's a 2001 Subaru Impreza L Sports Wagon (kind of an oxymoron, eh? ;-)
 

@@ -31,7 +31,7 @@ passcode(5) = 1
 
 ' helper vars
 btnWrk	VAR Byte(nrOfButtons)	' for use by the BUTTON function
-i		VAR Byte				' general counter
+i	VAR Byte		' general counter
 
 '''''''''''
 ' M A I N '

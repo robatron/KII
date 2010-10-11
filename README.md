@@ -8,6 +8,12 @@ KeypadIgnition is an electronics project that will allow me to start my car, Syl
 
 I had an old [BASIC Stamp](http://en.wikipedia.org/wiki/BASIC_Stamp) microcontroller laying around, and thought I'd put it to use. After finally getting the [compiler](http://www.parallax.com/tabid/441/Default.aspx) working on my Linux laptop with [Wine](http://www.winehq.org/) (see the "Technical notes" section below), I did a few tests, and determined it would probably work for the project.
 
+## Images
+
+ - [Physical keypad unit (so far)](http://twitpic.com/2urter)
+ - [Circuit diagram (most-recent design)](http://twitpic.com/2wilea)
+ - [Measuring current of existing ignition switch modes](http://twitpic.com/2w72s6)
+
 ## Technical notes
 
 ### The BASIC Stamp Editor and Wine under Linux

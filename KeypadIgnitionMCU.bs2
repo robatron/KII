@@ -38,23 +38,24 @@ i		VAR Byte				' general counter
 '''''''''''
 
 main:
-   GOSUB lock
+	GOSUB lock
+	
+	' pin connection sensing experiment
+	HIGH 5
+	INPUT 4
 
-   HIGH 5
-   INPUT 4
+	DO
+		LOW 4
+		INPUT 4
 
-   DO
-       LOW 4
-       INPUT 4
+		SLEEP 500
 
-       SLEEP 500
-
-       IF(IN4) THEN
-           GOSUB unlock
-       ELSE
-           GOSUB lock
-       ENDIF
-   LOOP
+		IF(IN4) THEN
+			GOSUB unlock
+		ELSE
+			GOSUB lock
+		ENDIF
+	LOOP
 
 lock:
    HIGH redLED

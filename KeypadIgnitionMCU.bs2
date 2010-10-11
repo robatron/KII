@@ -1,6 +1,10 @@
 ' {$STAMP BS2}
 ' {$PBASIC 2.5}
 
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' PBASIC microcontroller code for the KeypadIgnition project '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
 ' pin shortcuts
 btn0		PIN 0
 btn1		PIN 1

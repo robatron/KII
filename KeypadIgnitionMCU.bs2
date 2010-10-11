@@ -58,15 +58,15 @@ main:
 	LOOP
 
 lock:
-   HIGH redLED
-   LOW greenLED
-   RETURN
+	HIGH redLED
+	LOW greenLED
+	RETURN
 
 unlock:
-   DO
+	DO
 		LOW redLED
 		HIGH greenLED
-   LOOP
+	LOOP
 
 ''''''''''''''''''''''''''
 ' button press functions '

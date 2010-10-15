@@ -1,6 +1,6 @@
 # KII #
 
-KII (pronounced like "key", stands for "Keypad Ignition Interlock") is a little project I started to allow me to start my car by entering a passcode into a ceiling-mounted keypad, as oppose to starting it the boring, "traditional" way with a key. (In other words, it'll make me feel like a secret agent whenever I hop in my car, punch in a keycode, and have it roar to life. How bad ass would that be? ;-)
+KII is pronounced like "key", and it stands for "Keypad Ignition Interlock". It's a little project I'm working on that will (eventually) allow me to start my car by entering a passcode into a ceiling-mounted keypad, as oppose to starting it the boring, "traditional" way with a key. (In other words, it'll make me feel like a secret agent whenever I hop in my car, punch in a keycode, and have it roar to life. How bad ass would that be? ;-)
 
 ** Project status: *work in-progress* **
 
@@ -29,5 +29,5 @@ I'm using a BASIC Stamp 2, which uses the [PBASIC language](http://en.wikipedia.
 
 ### About my car
 
-Her name is Sylvia, and she's a 2001 Subaru Impreza L Sports Wagon ("Sports Wagon"? Kind of an oxymoron, eh? ;-)
+Her name is Sylvia, and she's a 2001 Subaru Impreza L Sports Wagon ("Sports Wagon"? Kind of an oxymoron, eh?)
 

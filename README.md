@@ -1,6 +1,6 @@
 # KII #
 
-KII is pronounced like "key", and it stands for "Keypad Ignition Interlock". It's a little project I'm working on that will (eventually) allow me to start my car by entering a passcode into a ceiling-mounted keypad, as oppose to starting it the boring, "traditional" way with a key. (In other words, it'll make me feel like a secret agent whenever I hop in my car, punch in a keycode, and have it roar to life. How bad ass would that be? ;-)
+KII is pronounced like "key", and it stands for "Keypad-based Ignition [Interlock](http://en.wikipedia.org/wiki/Interlock_%28engineering%29)". It's a little project I'm working on that will (eventually) allow me to start my car by entering a passcode into a ceiling-mounted [keypad](http://en.wikipedia.org/wiki/Keypad), as oppose to starting it the boring, "traditional" way with a key. (In other words, it'll make me feel like a secret agent whenever I hop in my car, punch in a keycode, and have it roar to life. How bad ass would that be? ;-)
 
 ** Project status: *work in-progress* **
 

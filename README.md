@@ -10,8 +10,6 @@ I had an old [BASIC Stamp](http://en.wikipedia.org/wiki/BASIC_Stamp) microcontro
 
 ## Images
 
-[[http://twitpic.com/2urter]]
-
  - [Physical keypad unit (so far)](http://twitpic.com/2urter)
  - [Circuit diagram (most-recent design)](http://twitpic.com/2wilea)
  - [Measuring current of existing ignition switch modes](http://twitpic.com/2w72s6)

@@ -1,0 +1,188 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' PBASIC microcontroller code for the KeypadIgnition project '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+' pin shortcuts
+btn0		PIN 0
+btn1		PIN 1
+btn2		PIN 2
+btn3		PIN 3
+btn4		PIN 4
+btn5		PIN 5
+btn6		PIN 6
+btn7		PIN 7
+btn8		PIN 8
+btn9		PIN 9
+greenLED	PIN 10
+redLED		PIN 11
+
+' init passcode variables
+PASSCODE_LEN	CON 6	' num of digits in the passcode
+NR_OF_BTNS		CON 10	' num of physical buttons
+passcode	VAR Nib(PASSCODE_LEN)	' to store the passcode
+btnHistory	VAR Nib(PASSCODE_LEN)	' history of buttons pushed
+
+' function I/O
+lastBtn	VAR Nib	' Input for pushRecord. Last button that was pressed
+match	VAR Bit	' Output for testMatch. If passcode and history match
+
+' *THE* passcode
+passcode(0) = 9
+passcode(1) = 8
+passcode(2) = 7
+passcode(3) = 6
+passcode(4) = 5
+passcode(5) = 4
+
+' helper vars
+BTN_DELAY	CON 255	' delay between button repeat. 255=no repeat
+BTN_RATE	CON 0	' cycles between repeats (n/a if btnDelay=255)
+btnWrk		VAR Byte(NR_OF_BTNS)	' for use by the BUTTON function
+i			VAR Byte				' general counter
+
+'''''''''''
+' M A I N '
+'''''''''''
+
+main:
+	GOSUB lock
+	
+	DO
+		BUTTON btn0, 1, BTN_DELAY, BTN_RATE, btnWrk(0), 1, btn0Pressed	
+		BUTTON btn1, 1, BTN_DELAY, BTN_RATE, btnWrk(1), 1, btn1Pressed	
+		BUTTON btn2, 1, BTN_DELAY, BTN_RATE, btnWrk(2), 1, btn2Pressed	
+		BUTTON btn3, 1, BTN_DELAY, BTN_RATE, btnWrk(3), 1, btn3Pressed	
+		BUTTON btn4, 1, BTN_DELAY, BTN_RATE, btnWrk(4), 1, btn4Pressed	
+		BUTTON btn5, 1, BTN_DELAY, BTN_RATE, btnWrk(5), 1, btn5Pressed	
+		BUTTON btn6, 1, BTN_DELAY, BTN_RATE, btnWrk(6), 1, btn6Pressed	
+		BUTTON btn7, 1, BTN_DELAY, BTN_RATE, btnWrk(7), 1, btn7Pressed	
+		BUTTON btn8, 1, BTN_DELAY, BTN_RATE, btnWrk(8), 1, btn8Pressed	
+		BUTTON btn9, 1, BTN_DELAY, BTN_RATE, btnWrk(9), 1, btn9Pressed	
+	LOOP
+
+'''''''''''''''''''''
+' Lock/unock states '
+'''''''''''''''''''''
+
+lock:
+	HIGH redLED
+	LOW greenLED
+	RETURN
+
+unlock:
+	DO
+		LOW redLED
+		HIGH greenLED
+	LOOP
+
+''''''''''''''''''''''''''
+' button press functions '
+''''''''''''''''''''''''''
+
+btn0pressed:
+	lastBtn = 0
+	GOSUB btnPressed
+	RETURN
+
+btn1pressed:
+	lastBtn = 1
+	GOSUB btnPressed
+	RETURN
+
+btn2pressed:
+	lastBtn = 2
+	GOSUB btnPressed
+	RETURN
+
+btn3pressed:
+	lastBtn = 3
+	GOSUB btnPressed
+	RETURN
+
+btn4pressed:
+	lastBtn = 4
+	GOSUB btnPressed
+	RETURN
+
+btn5pressed:
+	lastBtn = 5
+	GOSUB btnPressed
+	RETURN
+
+btn6pressed:
+	lastBtn = 6
+	GOSUB btnPressed
+	RETURN
+
+btn7pressed:
+	lastBtn = 7
+	GOSUB btnPressed
+	RETURN
+
+btn8pressed:
+	lastBtn = 8
+	GOSUB btnPressed
+	RETURN
+
+btn9pressed:
+	lastBtn = 9
+	GOSUB btnPressed
+	RETURN
+
+btnPressed:
+	DEBUG "Button ", DEC lastBtn, " pressed! "
+	GOSUB pushRecord
+	GOSUB printHistory
+	GOSUB testMatch
+	IF(match)THEN
+		DEBUG "Passcode MATCHED!!",CR
+ 		GOTO unlock
+	ELSE
+		DEBUG "Password not matched yet.",CR
+		GOSUB lock
+	ENDIF
+	RETURN
+
+'''''''''''
+' helpers '
+'''''''''''
+
+testMatch:
+	' see if the password history array and the passcode array match. If so, set
+	' match to 1, otherwise, set match to 0
+	FOR i = 0 TO PASSCODE_LEN-1
+		' if a mismatch is found, set match to 0 and return
+		IF(passcode(i)<>btnHistory(i))THEN
+			match = 0
+			RETURN
+		ENDIF
+	NEXT
+	' otherwise, no mismatches were found. Set match to 1 and return
+	match = 1
+	RETURN
+
+pushRecord:
+	' push the value in record onto the bottom of btnHistory array. Each element
+	' will be shifted into the previous cell, and the 0th item will be thrown
+	' out. E.g., if we push the value 4 onto [0, 1, 2, 3], it will become
+	' [1, 2, 3, 4].
+	FOR i = 0 TO PASSCODE_LEN-2
+		btnHistory(i) = btnHistory(i+1)
+	NEXT
+		btnHistory(PASSCODE_LEN-1) = lastBtn
+	RETURN
+
+printHistory:
+	' print the button history array
+	DEBUG "Button history array = ["
+	FOR i = 0 TO PASSCODE_LEN-1
+		DEBUG DEC btnHistory(i)
+		IF(i<>PASSCODE_LEN-1) THEN
+			DEBUG ", "
+		ENDIF
+	NEXT
+	DEBUG "]", CR
+	RETURN

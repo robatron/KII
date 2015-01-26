@@ -16,6 +16,12 @@ I had an old [BASIC Stamp](http://en.wikipedia.org/wiki/BASIC_Stamp) microcontro
 
 ## Technical notes
 
+### The BASIC Stamp in OS X
+
+To get the BS2 editor working in Mac, I had to install the
+[PL2303 Serial USB Cable Drivers](http://www.xbsd.nl/2011/07/pl2303-serial-usb-on-osx-lion.html),
+and use [MacBS2 Editor](http://www.muratnkonar.com/otherstuff/macbs2-experimental/downloads.shtml).
+
 ### The BASIC Stamp Editor and Wine under Linux
 
 Getting the BASIC Stamp Editor working under Linux was paramount to making this project possible (mainly because I was too lazy and stubborn to install Windows). Success was finally made after reading [this post](http://ubuntuforums.org/showthread.php?t=1523814). I followed it almost exactly, except there was ironically no need to follow the "VERY IMPORTANT STEP" section. I'm guessing this was because the bug he was referring to doesn't exist in the newer version of Wine I'm using. Speaking of which, here are the versions of software I'm using:
@@ -30,4 +36,3 @@ I'm using a BASIC Stamp 2, which uses the [PBASIC language](http://en.wikipedia.
 ### About my car
 
 Her name is Sylvia, and she's a 2001 Subaru Impreza L Sports Wagon ("Sports Wagon"? Kind of an oxymoron, eh?)
-
